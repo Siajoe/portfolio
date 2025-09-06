@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SIYA JOE - Portfolio</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <!-- External CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Loading Screen -->
+  <div class="loading" id="loading">
+    <div class="spinner"></div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="#" class="logo">SIYA JOE</a>
+      <ul class="nav-links">
+        <li><a onclick="showPage('home')">Home</a></li>
+        <li><a onclick="showPage('about')">About Me</a></li>
+        <li><a onclick="showPage('gallery')">Gallery</a></li>
+        <li><a onclick="showPage('contact')">Contact</a></li>
+        <li><a onclick="showPage('signup')">Sign Up</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Home Page -->
+  <div id="home" class="page active">
+    <section class="hero">
+      <div class="hero-content">
+        <h1>SIYA JOE</h1>
+        <p>Software Engineer /Student</p>
+        <a href="#" class="cta-button" onclick="showPage('about')">Discover My Work</a>
+      </div>
+    </section>
+  </div>
+
+  <!-- About Page -->
+  <div id="about" class="page">
+    <section class="about">
+      <div class="about-header">
+        <h2>About Me</h2>
+        <p>A passionate Computer Science BTech student and a person who dreams big</p>
+      </div>
+      <div class="about-content">
+        <div class="profile-card">
+          <div class="profile-image">
+            <i class="fas fa-user"></i>
+          </div>
+          <h3>SIYA JOE</h3>
+          <p>Computer Engineering Student</p>
+          <p>Pala, Kerala</p>
+          <p>📧 siyajoe@gmail.com</p>
+          <p>📱 +91 9400151136</p>
+        </div>
+        <div>
+          <div class="skills-section">
+            <h3>Technical Skills</h3>
+            <div class="skills-grid">
+              <div class="skill-item">HTML</div>
+              <div class="skill-item">CSS</div>
+              <div class="skill-item">C (Intermediate)</div>
+              <div class="skill-item">Python</div>
+            </div>
+          </div>
+          <div class="achievements">
+            <h3>Achievements & Experience</h3>
+            <div class="achievement-item">
+              <h4>Internship at Keltron</h4>
+              <p>Learned Python basics and built a small project</p>
+            </div>
+            <div class="achievement-item">
+              <h4>Third Prize in Music Competition</h4>
+            </div>
+            <div class="achievement-item">
+              <h4>🥇 Hackathon Participation</h4>
+              <p>NASA Space App Hackathon</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Gallery Page -->
+  <div id="gallery" class="page">
+    <section class="gallery">
+      <div class="gallery-header">
+        <h2>My Gallery</h2>
+        <img src="ss.jpg" alt="groupss" width="300" height="200">
+      </div>
+    </section>
+  </div>
+
+  <!-- Contact Page -->
+  <div id="contact" class="page">
+    <section class="contact">
+      <div class="contact-header">
+        <h2>Contact Me</h2>
+        <p>Let's work together on your next project</p>
+      </div>
+      <div class="contact-content">
+        <div class="contact-form">
+          <h3>Send Message</h3>
+          <p style="color:#666;margin-bottom:2rem;font-size:0.9rem;">
+            <strong>Demo Form:</strong> 
+          </p>
+          <form onsubmit="submitContactForm(event)">
+            <div class="form-group">
+              <label for="contact-name">Full Name</label>
+              <input type="text" id="contact-name" name="name" required>
+            </div>
+            <div class="form-group">
+              <label for="contact-email">Email Address</label>
+              <input type="email" id="contact-email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="contact-phone">Phone Number</label>
+              <input type="tel" id="contact-phone" name="phone">
+            </div>
+            <div class="form-group">
+              <label for="contact-subject">Subject</label>
+              <select id="contact-subject" name="subject" required>
+                <option value="">Select a subject</option>
+                <option value="web-development">Web Development</option>
+                <option value="mobile-app">Mobile App Development</option>
+                <option value="ui-design">UI/UX Design</option>
+                <option value="consultation">Consultation</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="contact-message">Message</label>
+              <textarea id="contact-message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Send Message</button>
+          </form>
+        </div>
+        <div class="contact-info">
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <h4>Email</h4>
+            <p>siyajoegmail.com</p>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-phone"></i>
+            <h4>Phone</h4>
+            <p>9400151136</p>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <h4>Location</h4>
+            <p>Maranagttupilly, Kerala<br>India</p>
+          </div>
+          <div class="map-container">
+            <h4>Find Me Here</h4>
+            <div class="map-placeholder">
+              <i class="fas fa-map"></i>
+              <span style="margin-left:1rem;">Interactive Map Location</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Signup Page -->
+  <div id="signup" class="page">
+    <section class="signup">
+      <div class="signup-header">
+        <h2>Join Our Community</h2>
+        <p>Create your account to access exclusive content and features</p>
+      </div>
+      <div class="signup-form">
+        <p style="color:#666;margin-bottom:2rem;text-align:center;font-size:0.9rem;">
+          <strong>Demo Registration:</strong> This is a sample signup form for portfolio demonstration purposes.
+        </p>
+        <form onsubmit="submitSignupForm(event)">
+          <!-- First Row -->
+          <div class="form-row">
+            <div class="form-group">
+              <label for="firstName">First Name</label>
+              <input type="text" id="firstName" name="firstName" required>
+            </div>
+            <div class="form-group">
+              <label for="lastName">Last Name</label>
+              <input type="text" id="lastName" name="lastName" required>
+            </div>
+          </div>
+          <!-- Second Row -->
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" required>
+            </div>
+          </div>
+          <!-- Username + Password -->
+          <div class="form-row">
+            <div class="form-group">
+              <label for="username">Username</label>
+              <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" id="password" name="password" required>
+            </div>
+          </div>
+          <!-- Confirm Password + DOB -->
+          <div class="form-row">
+            <div class="form-group">
+              <label for="confirmPassword">Confirm Password</label>
+              <input type="password" id="confirmPassword" name="confirmPassword" required>
+            </div>
+            <div class="form-group">
+              <label for="dateOfBirth">Date of Birth</label>
+              <input type="date" id="dateOfBirth" name="dateOfBirth" required>
+            </div>
+          </div>
+          <!-- Gender + Country -->
+          <div class="form-row">
+            <div class="form-group">
+              <label for="gender">Gender</label>
+              <select id="gender" name="gender" required>
+                <option value="">Select Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+                <option value="prefer-not-to-say">Prefer not to say</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="country">Country</label>
+              <select id="country" name="country" required>
+                <option value="">Select Country</option>
+                <option value="in">India</option>
+                <option value="us">United States</option>
+                <option value="uk">United Kingdom</option>
+                <option value="de">Germany</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+          </div>
+          <!-- Address -->
+          <div class="form-row full">
+            <div class="form-group">
+              <label for="address">Street Address</label>
+              <input type="text" id="address" name="address" required>
+            </div>
+          </div>
+          <!-- City + ZIP -->
+          <div class="form-row">
+            <div class="form-group">
+              <label for="city">City</label>
+              <input type="text" id="city" name="city" required>
+            </div>
+            <div class="form-group">
+              <label for="zipCode">ZIP/Postal Code</label>
+              <input type="text" id="zipCode" name="zipCode" required>
+            </div>
+          </div>
+          <!-- Occupation + Company -->
+          <div class="form-row">
+            <div class="form-group">
+              <label for="occupation">Occupation</label>
+              <input type="text" id="occupation" name="occupation" required>
+            </div>
+            <div class="form-group">
+              <label for="company">Company/Organization</label>
+              <input type="text" id="company" name="company">
+            </div>
+          </div>
+          <!-- Interests -->
+          <div class="form-row full">
+            <div class="form-group">
+              <label for="interests">Areas of Interest</label>
+              <select id="interests" name="interests" required>
+                <option value="">Select Primary Interest</option>
+                <option value="web-development">Web Development</option>
+                <option value="mobile-development">Mobile Development</option>
+                <option value="ui-ux-design">UI/UX Design</option>
+                <option value="data-science">Data Science</option>
+                <option value="artificial-intelligence">Artificial Intelligence</option>
+                <option value="cybersecurity">Cybersecurity</option>
+              </select>
+            </div>
+          </div>
+          <!-- Checkboxes -->
+          <div class="checkbox-group">
+            <input type="checkbox" id="newsletter" name="newsletter">
+            <label for="newsletter">Subscribe to our newsletter</label>
+          </div>
+          <div class="checkbox-group">
+            <input type="checkbox" id="terms" name="terms" required>
+            <label for="terms">I agree to the Terms of Service</label>
+          </div>
+          <button type="submit" class="submit-btn">Create Account</button>
+        </form>
+      </div>
+    </section>
+  </div>
+
+  <!-- External JS -->
+  <script src="script.js"></script>
+</body>
+</html>
